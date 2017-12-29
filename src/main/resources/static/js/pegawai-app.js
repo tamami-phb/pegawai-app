@@ -1,0 +1,1 @@
+var pegawaiApp = angular.module('PegawaiApp', []);

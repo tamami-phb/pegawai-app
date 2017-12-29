@@ -5,10 +5,32 @@
         <script src="./js/angular.min.js"></script>
         <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
 
+        <script src="./js/pegawai-app.js"></script>
+        <script src="./js/daftar-controller.js"></script>
     </head>
     <body class="container">
         <div class="jumbotron">
             <h1>DAFTAR PEGAWAI</h1>
+        </div>
+        <div ng-app="PegawaiApp">
+            <div ng-controller="DaftarController">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAMA</th>
+                            <th>JABATAN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="pegawai in daftarPegawai">
+                            <td>{{ pegawai.id }}</td>
+                            <td>{{ pegawai.nama }}</td>
+                            <td>{{ pegawai.jabatan }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>
