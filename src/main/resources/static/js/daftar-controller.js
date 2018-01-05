@@ -16,6 +16,22 @@ pegawaiApp.controller('DaftarController',
             $window.location.href = "/tambah-ui";
         }
 
+        $scope.edit = function(pegawai) {
+            $window.location.href = "/edit-ui?id=" + pegawai.id +
+                    "&nama=" + pegawai.nama +
+                    "&jabatan=" + pegawai.jabatan;
+        }
+
+        $scope.delete = function(pegawai) {
+            $http.delete("/api/delete/" + pegawai.id).then(sukses, gagal);
+
+            function sukses(response) {
+                $scope.updateDaftar();
+            }
+
+            function gagal(response) {}
+        }
+
         $scope.updateDaftar();
     }
 );

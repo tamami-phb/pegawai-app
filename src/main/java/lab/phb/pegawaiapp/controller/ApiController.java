@@ -3,6 +3,7 @@ package lab.phb.pegawaiapp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +29,11 @@ public class ApiController {
         //System.out.println("nama : " + pegawai.getNama());
         //System.out.println("jabatan : " + pegawai.getJabatan());
         pegawaiRepo.save(pegawai);
+    }
+
+    @RequestMapping(value = "/api/delete/{id}", method = RequestMethod.DELETE)
+    public void hapus(@PathVariable("id") int id) {
+        pegawaiRepo.delete(id);
     }
 
 }

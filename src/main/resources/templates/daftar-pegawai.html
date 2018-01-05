@@ -27,6 +27,18 @@
                             <td>{{ pegawai.id }}</td>
                             <td>{{ pegawai.nama }}</td>
                             <td>{{ pegawai.jabatan }}</td>
+                            <td>
+                                <button class="btn btn-warning"
+                                        ng-click="edit(pegawai)">
+                                    Ubah
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger"
+                                        ng-click="delete(pegawai)">
+                                    Hapus
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                     <tfoot>
